@@ -27,6 +27,10 @@
       url = "github:ezKEa/aagl-gtk-on-nix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -43,10 +47,11 @@
       pkgs = nixpkgs.legacyPackages.${system};
 
       spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+      zen-browser = inputs.zen-browser.packages.${pkgs.system}.default;
     in
     {
       nixosConfigurations.mychro = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit spicePkgs aagl; };
+        specialArgs = { inherit spicePkgs aagl zen-browser; };
 
         modules = [
           ./system/configuration.nix

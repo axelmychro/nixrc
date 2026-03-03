@@ -4,7 +4,7 @@ _: {
     ./development.nix
     ./documents.nix
     ./games/index.nix
-    ./internet.nix
+    ./internet/index.nix
     ./multimedia.nix
     ./utilities.nix
   ];
