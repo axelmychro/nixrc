@@ -16,6 +16,7 @@ let
     # Check these out at about:config
     "extensions.autoDisableScopes" = 0;
     "extensions.pocket.enabled" = false;
+    "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
   };
   extensions = [
     (extension "ublock-origin" "uBlock0@raymondhill.net")
