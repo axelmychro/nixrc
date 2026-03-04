@@ -35,6 +35,11 @@ _: {
                 color = "129,200,190";
               }
             ];
+            textOnlySensors = [
+              "memory/physical/used"
+              "memory/physical/free"
+              "memory/physical/total"
+            ];
           };
         }
         {
@@ -48,6 +53,20 @@ _: {
                 color = "140,170,238";
               }
             ];
+            textOnlySensors = [
+              "cpu/cpu0/usage"
+              "cpu/cpu1/usage"
+              "cpu/cpu2/usage"
+              "cpu/cpu3/usage"
+              "cpu/cpu4/usage"
+              "cpu/cpu5/usage"
+              "cpu/cpu6/usage"
+              "cpu/cpu7/usage"
+              "cpu/cpu8/usage"
+              "cpu/cpu9/usage"
+              "cpu/cpu10/usage"
+              "cpu/cpu11/usage"
+            ];
           };
         }
         {
@@ -56,10 +75,14 @@ _: {
             displayStyle = "org.kde.ksysguard.textonly";
             sensors = [
               {
-                name = "gpu/gpu1/usage";
+                name = "gpu/gpu0/usage";
                 label = "󰈈";
                 color = "166,209,137";
               }
+            ];
+            textOnlySensors = [
+              "gpu/gpu0/usedVram"
+              "gpu/gpu0/totalVram"
             ];
           };
         }
@@ -94,6 +117,11 @@ _: {
                 label = "";
                 color = "202,158,230";
               }
+            ];
+            textOnlySensors = [
+              "disk/all/used"
+              "disk/all/free"
+              "disk/all/total"
             ];
           };
         }
