@@ -24,14 +24,6 @@ _: {
             launchers = [ ];
           };
         }
-        "org.kde.plasma.panelspacer"
-        {
-          digitalClock = {
-            date.format.custom = "ddd, d MMM";
-            calendar.firstDayOfWeek = "monday";
-          };
-        }
-        "org.kde.plasma.panelspacer"
         {
           systemMonitor = {
             title = "Memory";
@@ -64,13 +56,21 @@ _: {
             displayStyle = "org.kde.ksysguard.textonly";
             sensors = [
               {
-                name = "gpu/gpu0/usage";
+                name = "gpu/gpu1/usage";
                 label = "󰈈";
                 color = "166,209,137";
               }
             ];
           };
         }
+        "org.kde.plasma.panelspacer"
+        {
+          digitalClock = {
+            date.format.custom = "ddd, d MMM";
+            calendar.firstDayOfWeek = "monday";
+          };
+        }
+        "org.kde.plasma.panelspacer"
         {
           systemMonitor = {
             title = "Temperature";
@@ -92,7 +92,7 @@ _: {
               {
                 name = "disk/all/usedPercent";
                 label = "";
-                color = "241,240,186";
+                color = "202,158,230";
               }
             ];
           };
