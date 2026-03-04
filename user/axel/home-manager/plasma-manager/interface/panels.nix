@@ -20,6 +20,19 @@ _: {
           };
         }
         {
+          iconTasks = {
+            launchers = [ ];
+          };
+        }
+        "org.kde.plasma.panelspacer"
+        {
+          digitalClock = {
+            date.format.custom = "ddd, d MMM";
+            calendar.firstDayOfWeek = "monday";
+          };
+        }
+        "org.kde.plasma.panelspacer"
+        {
           systemMonitor = {
             title = "Memory";
             displayStyle = "org.kde.ksysguard.textonly";
@@ -58,14 +71,6 @@ _: {
             ];
           };
         }
-        "org.kde.plasma.panelspacer"
-        {
-          digitalClock = {
-            date.format.custom = "ddd, d MMM";
-            calendar.firstDayOfWeek = "monday";
-          };
-        }
-        "org.kde.plasma.panelspacer"
         {
           systemMonitor = {
             title = "Temperature";
