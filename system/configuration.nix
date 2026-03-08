@@ -5,8 +5,6 @@
 {
   system = {
     stateVersion = "25.11";
-    # boot label depends on my mood, on which arknights character i feel fluffy with :3
-    nixos.label = "priestess";
   };
 
   boot = {

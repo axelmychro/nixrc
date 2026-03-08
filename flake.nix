@@ -79,6 +79,7 @@
               ;
           };
           modules = [
+            { system.nixos.label = "priestess"; }
             ./system/configuration.nix
             ./user/axel/index.nix
             ./ecosystem/feline/index.nix
@@ -101,6 +102,7 @@
               ;
           };
           modules = [
+            { system.nixos.label = "skadi"; }
             ./system/configuration.nix
             ./user/axel/index.nix
             ./ecosystem/liberi/index.nix
