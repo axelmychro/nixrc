@@ -5,7 +5,7 @@ _: {
 
     settings = {
       font_family = "FiraCode Nerd Font";
-      font_size = "20";
+      font_size = "16";
 
       cursor_shape = "underline";
       cursor_trail = 1;
@@ -19,8 +19,8 @@ _: {
       wayland_enable_ime = "no";
 
       background_opacity = "1";
-      initial_window_width = "80c";
-      initial_window_height = "24c";
+      initial_window_width = "36c";
+      initial_window_height = "16c";
       remember_window_size = "no";
       window_padding_width = 0;
 
