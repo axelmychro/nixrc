@@ -69,7 +69,7 @@
     in
     {
       nixosConfigurations = {
-        mychro = nixpkgs.lib.nixosSystem {
+        feline = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit
               zenPkgs

@@ -1,4 +1,4 @@
-# axelmychro/mynixos#mychro
+# axelmychro/mynixos
 
 this is the flake i daily drive
 
@@ -11,7 +11,7 @@ this is the flake i daily drive
 ## usage
 
 ```bash
-sudo nixos-rebuild switch --flake github:axelmychro/mynixos#mychro
+sudo nixos-rebuild switch --flake github:axelmychro/mynixos#feline
 ```
 
 ## credits
