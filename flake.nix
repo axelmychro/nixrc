@@ -85,7 +85,27 @@
             nix-flatpak.nixosModules.nix-flatpak
             { nixpkgs.overlays = [ millennium.overlays.default ]; }
             aagl.nixosModules.default
+            spicetify-nix.nixosModules.default
             silentSDDM.nixosModules.default
+          ];
+        };
+        liberi = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit
+              zenPkgs
+              spicePkgs
+              aagl
+              ;
+          };
+          modules = [
+            ./system/configuration.nix
+            ./user/axel/index.nix
+            ./ecosystem/liberi/index.nix
+
+            home-manager.nixosModules.home-manager
+            nix-flatpak.nixosModules.nix-flatpak
+            { nixpkgs.overlays = [ millennium.overlays.default ]; }
+            aagl.nixosModules.default
             spicetify-nix.nixosModules.default
           ];
         };
