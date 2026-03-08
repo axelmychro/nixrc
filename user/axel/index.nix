@@ -11,6 +11,5 @@
   imports = [
     ./modules/programs/index.nix
     ./modules/services/index.nix
-    ../../specialisation/index.nix
   ];
 }

@@ -42,12 +42,6 @@
       url = "github:noctalia-dev/noctalia-qs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    elephant.url = "github:abenz1267/elephant";
-
-    walker = {
-      url = "github:abenz1267/walker";
-      inputs.elephant.follows = "elephant";
-    };
   };
 
   outputs =
@@ -59,10 +53,11 @@
       millennium,
       spicetify-nix,
       aagl,
+
       silentSDDM,
       plasma-manager,
+
       noctalia,
-      walker,
       ...
     }:
     let
@@ -73,37 +68,36 @@
       spicePkgs = spicetify-nix.legacyPackages.${pkgs.system};
     in
     {
-      nixosConfigurations.mychro = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit
-            zenPkgs
-            spicePkgs
-            aagl
-            noctalia
-            ;
+      nixosConfigurations = {
+        mychro = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit
+              zenPkgs
+              spicePkgs
+              aagl
+              ;
+          };
+          modules = [
+            ./system/configuration.nix
+            ./user/axel/index.nix
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager = {
+                users.axel = import ./user/axel/home-manager/home.nix;
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                sharedModules = [ plasma-manager.homeModules.plasma-manager ];
+                backupFileExtension = "backup";
+              };
+            }
+            nix-flatpak.nixosModules.nix-flatpak
+            { nixpkgs.overlays = [ millennium.overlays.default ]; }
+            aagl.nixosModules.default
+            silentSDDM.nixosModules.default
+            spicetify-nix.nixosModules.default
+          ];
         };
-
-        modules = [
-          ./system/configuration.nix
-          ./user/axel/index.nix
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              users.axel = import ./user/axel/home-manager/home.nix;
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              sharedModules = [ plasma-manager.homeModules.plasma-manager ];
-              backupFileExtension = "backup";
-            };
-          }
-          nix-flatpak.nixosModules.nix-flatpak
-          { nixpkgs.overlays = [ millennium.overlays.default ]; }
-          aagl.nixosModules.default
-          silentSDDM.nixosModules.default
-          spicetify-nix.nixosModules.default
-          walker.nixosModules.default
-        ];
       };
     };
 }
