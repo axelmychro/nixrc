@@ -56,6 +56,8 @@
 
       silentSDDM,
       plasma-manager,
+
+      noctalia,
       ...
     }:
     let
@@ -95,6 +97,7 @@
               zenPkgs
               spicePkgs
               aagl
+              noctalia
               ;
           };
           modules = [

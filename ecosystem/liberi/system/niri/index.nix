@@ -1,3 +1,3 @@
-_:{
+_: {
   programs.niri.enable = true;
 }
