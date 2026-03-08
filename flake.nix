@@ -4,18 +4,9 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
-    silentSDDM = {
-      url = "github:uiriansan/SilentSDDM";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    plasma-manager = {
-      url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
 
@@ -31,19 +22,47 @@
       url = "github:ezKEa/aagl-gtk-on-nix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    silentSDDM = {
+      url = "github:uiriansan/SilentSDDM";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.noctalia-qs.follows = "noctalia-qs";
+    };
+    noctalia-qs = {
+      url = "github:noctalia-dev/noctalia-qs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    elephant.url = "github:abenz1267/elephant";
+
+    walker = {
+      url = "github:abenz1267/walker";
+      inputs.elephant.follows = "elephant";
+    };
   };
 
   outputs =
     {
       nixpkgs,
-      silentSDDM,
       home-manager,
-      plasma-manager,
       nix-flatpak,
       zen-browser,
       millennium,
       spicetify-nix,
       aagl,
+      silentSDDM,
+      plasma-manager,
+      noctalia,
+      walker,
       ...
     }:
     let
@@ -55,13 +74,19 @@
     in
     {
       nixosConfigurations.mychro = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit zenPkgs spicePkgs aagl; };
+        specialArgs = {
+          inherit
+            zenPkgs
+            spicePkgs
+            aagl
+            noctalia
+            ;
+        };
 
         modules = [
           ./system/configuration.nix
           ./user/axel/index.nix
 
-          silentSDDM.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager = {
@@ -75,7 +100,9 @@
           nix-flatpak.nixosModules.nix-flatpak
           { nixpkgs.overlays = [ millennium.overlays.default ]; }
           aagl.nixosModules.default
+          silentSDDM.nixosModules.default
           spicetify-nix.nixosModules.default
+          walker.nixosModules.default
         ];
       };
     };
