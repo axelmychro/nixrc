@@ -1,9 +1,12 @@
-_: {
-  users.users.axel = {
-    isNormalUser = true;
-    extraGroups = [
-      "wheel"
-    ];
+{ pkgs, ... }:
+{
+  users = {
+    defaultUserShell = pkgs.bash;
+    users.axel = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" ];
+      shell = pkgs.bash;
+    };
   };
   imports = [
     ./modules/programs/index.nix
