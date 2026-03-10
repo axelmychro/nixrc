@@ -22,9 +22,6 @@ _: {
     ];
     right = [
       {
-        id = "MediaMini";
-      }
-      {
         id = "Brightness";
       }
       {
@@ -33,11 +30,11 @@ _: {
       {
         alwaysShowPercentage = false;
         id = "Battery";
-        warningThreshold = 30;
+        warningThreshold = 50;
       }
       {
-        formatHorizontal = "HH:mm";
-        formatVertical = "HH mm";
+        formatHorizontal = "hh:mm a, dd MMM";
+        formatVertical = "hh mm";
         id = "Clock";
         useMonospacedFont = true;
         usePrimaryColor = true;
