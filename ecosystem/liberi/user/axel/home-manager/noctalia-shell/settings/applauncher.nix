@@ -13,7 +13,7 @@ _: {
     terminalCommand = "alacritty -e";
     customLaunchPrefixEnabled = false;
     customLaunchPrefix = "";
-    viewMode = "list";
+    viewMode = "grid";
     showCategories = true;
     iconMode = "tabler";
     showIconBackground = false;
