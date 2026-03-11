@@ -17,9 +17,9 @@ _: {
     floating = false;
     fontScale = 1;
     widgetSpacing = 8;
-    contentPadding = 16;
+    contentPadding = 8;
     frameThickness = 8;
-    frameRadius = 12;
+    frameRadius = 20;
     outerCorners = true;
     marginVertical = 0;
     marginHorizontal = 0;
