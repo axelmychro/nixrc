@@ -35,7 +35,10 @@
   };
   services.xserver = {
     enable = false;
-    videoDrivers = [ "nvidia" ];
+    videoDrivers = [
+      "modesetting"
+      "nvidia"
+    ];
   };
   environment = {
     sessionVariables = {
