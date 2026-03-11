@@ -18,11 +18,13 @@ _: {
     animationSpeed = 1;
     animationDisabled = false;
 
-    compactLockScreen = false;
+    compactLockScreen = true;
     lockScreenAnimations = true;
     lockOnSuspend = true;
     enableLockScreenCountdown = true;
     lockScreenCountdownDuration = 10000;
+    clockStyle = "custom";
+    clockFormat = "hh\nmm\na";
 
     showSessionButtonsOnLockScreen = false;
     showHibernateOnLockScreen = false;
@@ -39,9 +41,6 @@ _: {
 
     autoStartAuth = false;
     allowPasswordWithFprintd = false;
-
-    clockStyle = "custom";
-    clockFormat = "hh\nmm a";
 
     passwordChars = "triangle-filled";
     # "circle-filled", "pentagon-filled", "michelin-star-filled", "square-rounded-filled", "guitar-pick-filled", "blob-filled", "triangle-filled"
