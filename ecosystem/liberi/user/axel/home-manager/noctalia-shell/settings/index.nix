@@ -8,6 +8,7 @@ _: {
     ./general/index.nix
     ./location.nix
     ./network.nix
+    ./sessionMenu.nix
     ./systemMonitor.nix
     ./ui.nix
     ./wallpaper.nix
