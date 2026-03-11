@@ -23,7 +23,7 @@
       {
         id = "Workspace";
         hideUnoccupied = false;
-        labelMode = "name";
+        labelMode = "none";
       }
     ];
     right = [
