@@ -5,6 +5,7 @@ _: {
     ./calendar.nix
     ./colors.nix
     ./controlCenter.nix
+    ./idle.nix
     ./general/index.nix
     ./location.nix
     ./network.nix
