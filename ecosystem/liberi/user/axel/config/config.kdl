@@ -204,8 +204,6 @@ binds {
   Mod+Ctrl+WheelScrollLeft {
     move-column-left
   }
-  // Usually scrolling up and down with Shift in applications results in
-  // horizontal scrolling; these binds replicate that.
   Mod+Shift+WheelScrollDown {
     focus-column-right
   }
@@ -354,3 +352,4 @@ binds {
     power-off-monitors
   }
 }
+
