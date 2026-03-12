@@ -42,6 +42,16 @@ _: {
         ];
         formatter.language_server.name = "ruff";
       };
+
+      "Kdl" = {
+        formatter.external = {
+          command = "kdlfmt";
+          arguments = [
+            "format"
+            "-"
+          ];
+        };
+      };
     };
   };
 }
