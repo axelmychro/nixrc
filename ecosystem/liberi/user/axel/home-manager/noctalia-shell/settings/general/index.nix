@@ -18,18 +18,6 @@ _: {
     animationSpeed = 1;
     animationDisabled = false;
 
-    compactLockScreen = true;
-    lockScreenAnimations = true;
-    lockOnSuspend = true;
-    enableLockScreenCountdown = true;
-    lockScreenCountdownDuration = 10000;
-    clockStyle = "custom";
-    clockFormat = "hh\nmm\na";
-
-    showSessionButtonsOnLockScreen = false;
-    showHibernateOnLockScreen = false;
-    enableLockScreenMediaControls = true;
-
     enableBlurBehind = true;
     enableShadows = true;
     shadowDirection = "bottom_right";
@@ -42,15 +30,12 @@ _: {
     autoStartAuth = false;
     allowPasswordWithFprintd = false;
 
-    passwordChars = "triangle-filled";
-    # "circle-filled", "pentagon-filled", "michelin-star-filled", "square-rounded-filled", "guitar-pick-filled", "blob-filled", "triangle-filled"
-
-    lockScreenMonitors = [ ];
-
-    lockScreenBlur = 0.1;
-    lockScreenTint = 0.1;
+    passwordChars = true;
 
     reverseScroll = false;
   };
-  imports = [ ./keybinds.nix ];
+  imports = [
+    ./keybinds.nix
+    ./lockscreen.nix
+  ];
 }
