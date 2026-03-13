@@ -1,1 +1,6 @@
-_: { imports = [ ./ghostty.nix ]; }
+_: {
+  imports = [
+    ./zed/index.nix
+    ./ghostty.nix
+  ];
+}

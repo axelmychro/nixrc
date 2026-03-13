@@ -5,7 +5,6 @@ _: {
     extensions = [
       "git-firefly"
       "wakatime"
-
     ];
 
     userSettings = {

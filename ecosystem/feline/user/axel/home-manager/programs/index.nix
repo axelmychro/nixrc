@@ -1,1 +1,6 @@
-_: { imports = [ ./kitty.nix ]; }
+_: {
+  imports = [
+    ./zed/index.nix
+    ./kitty.nix
+  ];
+}
