@@ -1,11 +1,7 @@
 _: {
   networking = {
-    networkmanager = {
-      enable = true;
-      dns = "systemd-resolved";
-    };
     firewall = {
-      enable = true;
+      enable = false;
       allowPing = true;
       logReversePathDrops = true;
     };
@@ -20,5 +16,5 @@ _: {
     dnssec = "true";
     domains = [ "~." ];
   };
-  services.cloudflare-warp.enable = true; # conflicts with resolved
+  services.cloudflare-warp.enable = false; # conflicts with resolved
 }
