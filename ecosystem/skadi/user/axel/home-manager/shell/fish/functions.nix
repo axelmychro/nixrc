@@ -5,7 +5,7 @@ _: {
         fd -e nix -x nixfmt {}
         fd -e kdl -x kdlfmt format {}
         git add .
-        sudo nixos-rebuild switch --flake .
+        sudo nixos-rebuild switch --flake .#skadi
       '';
     };
     generate-bleed = {
