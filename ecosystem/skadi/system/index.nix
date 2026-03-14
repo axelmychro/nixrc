@@ -14,5 +14,5 @@
   ];
   services.displayManager.ly.enable = true;
   programs.fish.enable = true;
-  imports = [ ./niri/index.nix ];
+  imports = [ ./modules/index.nix ];
 }
