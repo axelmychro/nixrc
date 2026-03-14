@@ -1,1 +1,6 @@
-_: { imports = [ ./bash/index.nix ]; }
+_: {
+  imports = [
+    ./bash/index.nix
+    ./fastfetch/index.nix
+  ];
+}
