@@ -21,12 +21,12 @@
           package = pkgs.nordic;
         };
         iconTheme = {
-          name = "Papirus-Dark";
-          package = pkgs.papirus-icon-theme;
+          name = "Nordzy";
+          package = pkgs.nordzy-icon-theme;
         };
         cursorTheme = {
-          name = "Nordic-Cursors";
-          package = pkgs.nordic;
+          name = "Nordzy-cursors-white";
+          package = pkgs.nordzy-cursor-theme;
         };
       };
       qt = {
