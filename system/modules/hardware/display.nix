@@ -43,6 +43,7 @@
   environment = {
     sessionVariables = {
       LIBVA_DRIVER_NAME = "iHD";
+      NIXOS_OZONE_WL = "1";
     };
     systemPackages = with pkgs; [
       libva-utils
