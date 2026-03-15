@@ -103,9 +103,11 @@
         skadi = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit
+              nixpkgs
               zen-browser
               firefox-addons
               nixcord
+              spicetify-nix
               spicePkgs
               aagl
               noctalia

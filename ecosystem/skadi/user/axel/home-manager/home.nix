@@ -1,14 +1,16 @@
 {
-  noctalia,
-  zen-browser,
-  firefox-addons,
   pkgs,
+  noctalia,
+  firefox-addons,
+  spicetify-nix,
+  spicePkgs,
+  skadiAssets,
   ...
 }:
 let
   skadiPixelCursors = pkgs.stdenv.mkDerivation {
     name = "skadi-pixel-cursors";
-    src = ../assets/skadi-pixel-cursors;
+    src = "${skadiAssets}/skadi-pixel-cursors";
     installPhase = ''
       mkdir -p $out/share/icons/skadi-pixel-cursors/cursors
       cp -r cursors/* $out/share/icons/skadi-pixel-cursors/cursors/
@@ -18,7 +20,15 @@ let
 in
 {
   home-manager = {
-    extraSpecialArgs = { inherit noctalia firefox-addons; };
+    extraSpecialArgs = {
+      inherit
+        noctalia
+        firefox-addons
+        spicetify-nix
+        spicePkgs
+        skadiAssets
+        ;
+    };
     users.axel = {
       home.pointerCursor = {
         package = skadiPixelCursors;
@@ -26,7 +36,6 @@ in
       };
       xdg.configFile."niri/config.kdl".source = ../config/niri/config.kdl;
       imports = [
-        zen-browser.homeModules.twilight
         ./noctalia-shell/index.nix
         ./programs/index.nix
         ./shell/index.nix

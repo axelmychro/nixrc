@@ -1,6 +1,6 @@
-{ config, ... }:
+{ config, skadiAssets, ... }:
 {
-  home.file.".icon".source = ../../../../assets/icon.png;
+  home.file.".icon".source = "${skadiAssets}/icon.png";
   programs.noctalia-shell.settings.bar.widgets = {
     left = [
       {

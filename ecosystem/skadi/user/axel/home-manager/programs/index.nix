@@ -3,6 +3,7 @@ _: {
     ./zed/index.nix
     ./ghostty.nix
     ./nixcord.nix
+    ./spotify.nix
     ./zen-browser.nix
   ];
 }
