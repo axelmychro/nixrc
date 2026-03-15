@@ -82,6 +82,7 @@
             inherit
               zen-browser
               firefox-addons
+              nixcord
               spicePkgs
               aagl
               plasma-manager
@@ -94,7 +95,6 @@
 
             home-manager.nixosModules.home-manager
             nix-flatpak.nixosModules.nix-flatpak
-            zen-browser.packages.${system}.twilight
             { nixpkgs.overlays = [ millennium.overlays.default ]; }
             spicetify-nix.nixosModules.default
             aagl.nixosModules.default
