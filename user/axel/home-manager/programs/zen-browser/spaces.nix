@@ -9,9 +9,6 @@ _: {
         type = "gradient";
         colors = [
           {
-            red = 46;
-            green = 52;
-            blue = 64;
             algorithm = "analogous";
             type = "explicit-lightness";
           }
