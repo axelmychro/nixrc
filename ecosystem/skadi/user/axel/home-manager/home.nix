@@ -35,7 +35,7 @@
       qt = {
         enable = true;
         platformTheme.name = "gtk";
-        style.name = "nordic";
+        style.name = "Nordic";
       };
     };
   };
