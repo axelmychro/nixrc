@@ -1,6 +1,5 @@
 {
   plasma-manager,
-  spicetify-nix,
   spicePkgs,
   ...
 }:
