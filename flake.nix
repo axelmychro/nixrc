@@ -119,9 +119,7 @@
 
             home-manager.nixosModules.home-manager
             nix-flatpak.nixosModules.nix-flatpak
-            {
-              nixpkgs.overlays = [ millennium.overlays.default ];
-            }
+            { nixpkgs.overlays = [ millennium.overlays.default ]; }
             aagl.nixosModules.default
             spicetify-nix.nixosModules.default
           ];
