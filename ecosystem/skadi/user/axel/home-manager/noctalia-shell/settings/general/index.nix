@@ -6,23 +6,23 @@ _: {
     avatarImage = "/home/axel/.face";
     dimmerOpacity = 0.2;
 
-    scaleRatio = 1;
-    radiusRatio = 0.25;
-    iRadiusRatio = 0.25;
-    boxRadiusRatio = 1;
+    scaleRatio = 1.0;
+    radiusRatio = 0.5;
+    iRadiusRatio = 1.0;
+    boxRadiusRatio = 1.0;
 
     showScreenCorners = false;
     forceBlackScreenCorners = false;
-    screenRadiusRatio = 1;
+    screenRadiusRatio = 1.0;
 
-    animationSpeed = 1;
+    animationSpeed = 1.0;
     animationDisabled = false;
 
     enableBlurBehind = true;
     enableShadows = true;
     shadowDirection = "bottom_right";
-    shadowOffsetX = 3;
-    shadowOffsetY = 2;
+    shadowOffsetX = 3.0;
+    shadowOffsetY = 2.0;
 
     allowPanelsOnScreenWithoutBar = true;
     showChangelogOnStartup = true;
