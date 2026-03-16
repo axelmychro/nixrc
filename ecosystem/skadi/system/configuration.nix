@@ -5,12 +5,10 @@
   security.pam.services.swaylock = { };
   environment.systemPackages = with pkgs; [
     xwayland-satellite
-    wl-clipboard
     noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-    nnn
     nautilus
+    nnn
   ];
   services.displayManager.ly.enable = true;
-  programs.fish.enable = true;
   imports = [ ./modules/index.nix ];
 }
