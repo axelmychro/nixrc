@@ -1,6 +1,6 @@
 _: {
   programs.noctalia-shell.settings.appLauncher = {
-    enableClipboardHistory = true;
+    enableClipboardHistory = false;
     autoPasteClipboard = false;
     enableClipPreview = true;
     clipboardWrapText = true;
