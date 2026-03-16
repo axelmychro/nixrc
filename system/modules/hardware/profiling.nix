@@ -4,7 +4,12 @@ _: {
       enable = true;
       debug = true;
     };
-    upower.enable = true;
+    upower = {
+      enable = true;
+      percentageLow = 50;
+      percentageCritical = 20;
+      ignoreLid = true;
+    };
 
     # major options below all conflict with each other
     power-profiles-daemon.enable = true;
