@@ -6,7 +6,6 @@
   environment.systemPackages = with pkgs; [
     xwayland-satellite
     wl-clipboard
-    kdlfmt
     noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     nnn
     nautilus
