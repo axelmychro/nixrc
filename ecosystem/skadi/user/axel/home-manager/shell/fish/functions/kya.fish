@@ -28,7 +28,7 @@ if set -q _flag_purge
     echo "kya: purge history, clean garbage, optimise store"
     set_color normal
     sudo -v
-    nix profile purge-history --verbose
+    nix profile wipe-history --verbose
     nix store gc --verbose
     nix store optimise --verbose
 end
