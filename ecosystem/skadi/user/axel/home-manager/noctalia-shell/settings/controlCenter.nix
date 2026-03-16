@@ -34,17 +34,13 @@ _: {
           id = "WallpaperSelector";
         }
         {
-          id = "NoctaliaPerformance";
+          id = "NightLight";
         }
         {
           id = "KeepAwake";
         }
-        {
-          id = "NightLight";
-        }
       ];
-      right = [
-      ];
+      right = [ ];
     };
   };
 }
