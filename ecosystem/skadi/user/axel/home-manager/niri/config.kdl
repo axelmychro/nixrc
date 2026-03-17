@@ -83,6 +83,7 @@ window-rule {
 }
 window-rule {
   match app-id="spotify"
+  match app-id="vesktop"
   open-on-workspace "1"
 }
 window-rule {
@@ -374,4 +375,3 @@ cursor {
   xcursor-theme "skadi-pixel-cursors"
   xcursor-size 48
 }
-
