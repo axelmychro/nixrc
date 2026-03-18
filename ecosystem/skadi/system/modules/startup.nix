@@ -4,7 +4,12 @@
   ...
 }:
 {
-  boot.loader.timeout = 0;
+  boot = {
+    loader.timeout = 0;
+    initrd = {
+      verbose = false;
+    };
+  };
   services.greetd = {
     enable = true;
     settings = {
