@@ -28,6 +28,7 @@ if set -q _flag_purge
     echo "kya: purge history, clean garbage, optimise store"
     set_color normal
     sudo -v
+    sudo nix-collect-garbage -d --verbose
     nix profile wipe-history --verbose
     nix store gc --verbose
     nix store optimise --verbose
@@ -53,7 +54,7 @@ if set -q _flag_update
 end
 
 sudo -v
-if sudo nixos-rebuild $operation --flake .#$flake --verbose
+if sudo nixos-rebuild $operation --flake .#$flake --install-bootloader --verbose
     set_color green
     echo "kya: $flake $operation success"
     set_color normal
