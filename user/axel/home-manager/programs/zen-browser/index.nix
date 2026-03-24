@@ -10,7 +10,6 @@
   };
   imports = [
     ./bookmarks.nix
-    ./extensions.nix
     ./pins.nix
     ./policies.nix
     ./search.nix
