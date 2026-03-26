@@ -1,14 +1,10 @@
 { pkgs, ... }:
 {
   users = {
-    defaultUserShell = pkgs.bash;
+    defaultUserShell = pkgs.fish;
     users.axel = {
       isNormalUser = true;
-      extraGroups = [
-        "wheel"
-        "video"
-        "render"
-      ];
+      extraGroups = [ "wheel" ];
     };
   };
   imports = [
