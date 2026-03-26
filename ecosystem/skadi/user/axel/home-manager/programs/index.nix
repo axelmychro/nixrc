@@ -4,6 +4,5 @@ _: {
     ./ghostty.nix
     ./nixcord.nix
     ./spotify.nix
-    ./zen-browser.nix
   ];
 }

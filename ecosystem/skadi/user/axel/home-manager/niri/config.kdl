@@ -92,9 +92,8 @@ window-rule {
   open-on-workspace "2"
 }
 window-rule {
-  match app-id="zen-twilight"
+  match app-id="firefox"
   match app-id="google-chrome"
-  match app-id="floorp"
   open-on-workspace "3"
 }
 binds {

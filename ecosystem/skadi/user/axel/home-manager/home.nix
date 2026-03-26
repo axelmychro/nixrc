@@ -1,7 +1,6 @@
 {
   pkgs,
   noctalia,
-  firefox-addons,
   spicetify-nix,
   spicePkgs,
   skadiAssets,
@@ -23,7 +22,6 @@ in
     extraSpecialArgs = {
       inherit
         noctalia
-        firefox-addons
         spicetify-nix
         spicePkgs
         skadiAssets

@@ -1,15 +1,13 @@
 {
   lib,
   pkgs,
-  zen-browser,
   nixcord,
   spicetify-nix,
-  firefox-addons,
   ...
 }:
 {
   home-manager = {
-    extraSpecialArgs = { inherit spicetify-nix firefox-addons; };
+    extraSpecialArgs = { inherit spicetify-nix; };
     users.axel = {
       home = {
         homeDirectory = "/home/axel";
@@ -29,7 +27,6 @@
       };
       xdg.enable = true;
       imports = [
-        zen-browser.homeModules.twilight
         nixcord.homeModules.nixcord
         spicetify-nix.homeManagerModules.spicetify
         ./default-apps/index.nix

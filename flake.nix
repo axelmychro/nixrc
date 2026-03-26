@@ -9,15 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-    floorp.url = "github:fyukmdaa/floorp-flake";
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    firefox-addons = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nixcord.url = "github:FlameFlag/nixcord";
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
@@ -54,9 +45,6 @@
       nixpkgs,
       home-manager,
       nix-flatpak,
-      floorp,
-      zen-browser,
-      firefox-addons,
       nixcord,
       millennium,
       spicetify-nix,
@@ -80,9 +68,6 @@
         priestess = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit
-              floorp
-              zen-browser
-              firefox-addons
               nixcord
               spicetify-nix
               spicePkgs
@@ -99,7 +84,6 @@
             nix-flatpak.nixosModules.nix-flatpak
             {
               nixpkgs.overlays = [
-                floorp.overlays.default
                 millennium.overlays.default
               ];
             }
@@ -111,10 +95,7 @@
         skadi = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit
-              floorp
               nixpkgs
-              zen-browser
-              firefox-addons
               nixcord
               spicetify-nix
               spicePkgs
@@ -131,7 +112,6 @@
             nix-flatpak.nixosModules.nix-flatpak
             {
               nixpkgs.overlays = [
-                floorp.overlays.default
                 millennium.overlays.default
               ];
             }
