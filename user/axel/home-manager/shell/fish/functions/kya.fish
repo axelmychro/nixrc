@@ -10,7 +10,7 @@ or return
 set -l flake $argv[1]
 set -l operation $argv[2]
 
-if test -z "$flake"; or test -z "$operation"
+if test -z $flake; or test -z $operation
     set_color red
     echo "kya: missing flake or operation"
     set_color yellow
@@ -21,17 +21,6 @@ end
 
 if not sudo -v
     return 1
-end
-
-if set -q _flag_purge
-    set_color yellow
-    echo "kya: purge history, clean garbage, optimise store"
-    set_color normal
-    sudo -v
-    sudo nix-collect-garbage -d --verbose
-    nix profile wipe-history --verbose
-    nix store gc --verbose
-    nix store optimise --verbose
 end
 
 set_color yellow
@@ -58,6 +47,17 @@ if sudo nixos-rebuild $operation --flake .#$flake --install-bootloader --verbose
     set_color green
     echo "kya: $flake $operation success"
     set_color normal
+
+    if set -q _flag_purge
+        set_color yellow
+        echo "kya: purge history, clean garbage, optimise store"
+        set_color normal
+        sudo -v
+        sudo nix-collect-garbage -d --verbose
+        nix profile wipe-history --verbose
+        nix store gc --verbose
+        nix store optimise --verbose
+    end
 
     if set -q _flag_reboot
         set_color yellow
