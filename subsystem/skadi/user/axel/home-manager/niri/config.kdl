@@ -71,7 +71,7 @@ layout {
     color "#0003"
   }
 }
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S.png"
 animations {
   slowdown 0.7
 }
@@ -148,7 +148,7 @@ binds {
   Mod+O repeat=false {
     toggle-overview
   }
-  Mod+Q repeat=false {
+  Mod+Shift+Q repeat=false {
     close-window
   }
   Mod+Left {
