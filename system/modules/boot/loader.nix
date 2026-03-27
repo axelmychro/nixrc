@@ -21,7 +21,7 @@
         gfxpayloadBios = "keep";
 
         font = "${systemAssets}/GeistMonoNerdFont-Regular.otf";
-        fontSize = 16;
+        fontSize = 24;
 
         # backgroundColor = "#ff0000";
         # splashMode = "normal";
