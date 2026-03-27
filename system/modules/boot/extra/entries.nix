@@ -1,3 +1,6 @@
 _: {
-  boot.loader.grub.extraEntries = builtins.readFile ./gentoo;
+  boot.loader.grub.extraEntries = ''
+    ${builtins.readFile ./gentoo}
+    ${builtins.readFile ./mint}
+  '';
 }
