@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    qview
+    haruna
+  ];
   programs.obs-studio = {
     enable = true;
     package = (
@@ -15,4 +19,7 @@
       obs-vkcapture
     ];
   };
+  imports = [
+    ./obs-studio.nix
+  ];
 }
