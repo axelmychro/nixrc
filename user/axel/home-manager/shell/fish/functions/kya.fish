@@ -23,6 +23,17 @@ if not sudo -v
     return 1
 end
 
+if set -q _flag_purge
+    set_color yellow
+    echo "kya: purge history, clean garbage, optimise store"
+    set_color normal
+    sudo -v
+    sudo nix-collect-garbage -d --verbose
+    nix profile wipe-history --verbose
+    nix store gc --verbose
+    nix store optimise --verbose
+end
+
 set_color yellow
 echo "kya: format nix, kdl, fish, sh"
 set_color normal
@@ -47,17 +58,6 @@ if sudo nixos-rebuild $operation --flake .#$flake --install-bootloader --verbose
     set_color green
     echo "kya: $flake $operation success"
     set_color normal
-
-    if set -q _flag_purge
-        set_color yellow
-        echo "kya: purge history, clean garbage, optimise store"
-        set_color normal
-        sudo -v
-        sudo nix-collect-garbage -d --verbose
-        nix profile wipe-history --verbose
-        nix store gc --verbose
-        nix store optimise --verbose
-    end
 
     if set -q _flag_reboot
         set_color yellow
