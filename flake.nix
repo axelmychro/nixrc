@@ -51,21 +51,6 @@
     {
       formatter.${system} = pkgs.nixfmt-rfc-style;
       nixosConfigurations = {
-        priestess = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit
-              plasma-manager
-              ;
-          };
-          modules = [
-            ./system/configuration.nix
-            ./user/axel/configuration.nix
-            ./subsystem/priestess/index.nix
-
-            home-manager.nixosModules.home-manager
-            silentSDDM.nixosModules.default
-          ];
-        };
         skadi = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit

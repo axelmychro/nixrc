@@ -21,7 +21,6 @@
       imports = [
         ./niri/index.nix
         ./noctalia-shell/index.nix
-        ./programs/index.nix
       ];
 
       gtk = {
