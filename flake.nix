@@ -1,26 +1,30 @@
+# {{{
+# HELLO $USER
+# }}}
 {
   description = "Like a phoe-nix, cry and rise up from the ash!";
 
   inputs = {
-    # core
+    # {{{
+    # CORE INPUTS
+    # }}}
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    # { $HOME }
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # priestess
+    # {{{
+    # DESKTOP ENVIRONMENT
+    # }}}
+
+    # { DISPLAY MANAGER }
     silentSDDM = {
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    plasma-manager = {
-      url = "github:nix-community/plasma-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
-
-    # skadi
+    # { BAR, NOTIFICATION, LAUNCHER, LOCK SCREEN, and IDLE DAEMON }
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,17 +40,13 @@
     {
       nixpkgs,
       home-manager,
-
       silentSDDM,
-      plasma-manager,
-
       noctalia,
       ...
     }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-
     in
     {
       formatter.${system} = pkgs.nixfmt-rfc-style;
