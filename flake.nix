@@ -61,7 +61,7 @@
           modules = [
             ./system/configuration.nix
             ./user/axel/configuration.nix
-            ./subsystem/skadi/index.nix
+            ./environment/abyss/index.nix
 
             home-manager.nixosModules.home-manager
             silentSDDM.nixosModules.default

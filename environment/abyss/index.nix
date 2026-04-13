@@ -1,8 +1,8 @@
 _: {
-  system.nixos.label = "skadi";
+  system.nixos.label = "abyss";
 
   _module.args = {
-    skadiAssets = ./assets;
+    abyssAssets = ./assets;
   };
 
   imports = [

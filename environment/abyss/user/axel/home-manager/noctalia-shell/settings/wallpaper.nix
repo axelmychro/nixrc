@@ -1,7 +1,7 @@
-{ config, skadiAssets, ... }:
+{ config, abyssAssets, ... }:
 {
   home.file = {
-    "Pictures/Wallpapers/pries.jpg".source = "${skadiAssets}/pries.jpg";
+    "Pictures/Wallpapers/pries.jpg".source = "${abyssAssets}/pries.jpg";
     ".cache/noctalia/wallpapers.json" = {
       text = builtins.toJSON {
         defaultWallpaper = "${config.home.homeDirectory}/Pictures/Wallpapers/pries.jpg";

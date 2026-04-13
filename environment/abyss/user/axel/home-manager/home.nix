@@ -1,6 +1,6 @@
 {
   noctalia,
-  skadiAssets,
+  abyssAssets,
   ...
 }:
 {
@@ -8,7 +8,7 @@
     extraSpecialArgs = {
       inherit
         noctalia
-        skadiAssets
+        abyssAssets
         ;
     };
     users.axel = {
