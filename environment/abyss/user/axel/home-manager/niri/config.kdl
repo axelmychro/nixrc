@@ -32,6 +32,12 @@ output "eDP-1" {
   transform "normal"
 }
 prefer-no-csd
+cursor {
+  hide-when-typing
+  hide-after-inactive-ms 3000
+  xcursor-theme "Nordzy-cursors-white"
+  xcursor-size 48
+}
 layout {
   gaps 16
   background-color "#2e3440"
@@ -106,13 +112,13 @@ binds {
   Mod+E hotkey-overlay-title="Explorer" {
     spawn "nautilus"
   }
-  Mod+C hotkey-overlay-title="Control center" {
+  Mod+C hotkey-overlay-title="Control Center" {
     spawn-sh "noctalia-shell ipc call controlCenter toggle"
   }
-  Mod+R hotkey-overlay-title="Applauncher" {
+  Mod+Space hotkey-overlay-title="Launcher" {
     spawn-sh "noctalia-shell ipc call launcher toggle"
   }
-  Super+Alt+L hotkey-overlay-title="Lock screen" {
+  Super+Alt+L hotkey-overlay-title="Lock Screen" {
     spawn-sh "noctalia-shell ipc call lockScreen lock"
   }
   XF86AudioRaiseVolume allow-when-locked=true {
@@ -232,32 +238,74 @@ binds {
   Mod+Ctrl+Shift+WheelScrollUp {
     move-column-left
   }
-  Mod+1 {
-    focus-workspace 1
+  Mod+BracketLeft {
+    consume-or-expel-window-left
   }
-  Mod+2 {
-    focus-workspace 2
+  Mod+BracketRight {
+    consume-or-expel-window-right
   }
-  Mod+3 {
-    focus-workspace 3
+  Mod+Comma {
+    consume-window-into-column
   }
-  Mod+4 {
-    focus-workspace 4
+  Mod+Period {
+    expel-window-from-column
   }
-  Mod+5 {
-    focus-workspace 5
+  Mod+R {
+    switch-preset-column-width
   }
-  Mod+6 {
-    focus-workspace 6
+  Mod+Alt+R {
+    switch-preset-window-height
   }
-  Mod+7 {
-    focus-workspace 7
+  Mod+Ctrl+R {
+    reset-window-height
   }
-  Mod+8 {
-    focus-workspace 8
+  Mod+F {
+    maximize-window-to-edges
   }
-  Mod+9 {
-    focus-workspace 9
+  Mod+Shift+F {
+    fullscreen-window
+  }
+  Mod+Ctrl+F {
+    expand-column-to-available-width
+  }
+  Mod+Ctrl+C {
+    center-column
+  }
+  Mod+Shift+C {
+    center-visible-columns
+  }
+  Mod+Minus {
+    set-column-width "-10%"
+  }
+  Mod+Equal {
+    set-column-width "+10%"
+  }
+  Mod+Alt+Minus {
+    set-window-height "-10%"
+  }
+  Mod+Alt+Equal {
+    set-window-height "+10%"
+  }
+  Mod+F {
+    toggle-window-floating
+  }
+  Mod+Shift+F {
+    switch-focus-between-floating-and-tiling
+  }
+  Mod+W {
+    toggle-column-tabbed-display
+  }
+  Print {
+    screenshot-screen
+  }
+  Ctrl+Print {
+    screenshot
+  }
+  Mod+Print {
+    screenshot-window
+  }
+  Mod+Shift+E {
+    quit
   }
   Mod+Ctrl+1 {
     move-column-to-workspace 1
@@ -286,91 +334,32 @@ binds {
   Mod+Ctrl+9 {
     move-column-to-workspace 9
   }
-  Mod+BracketLeft {
-    consume-or-expel-window-left
+  Mod+1 {
+    focus-workspace 1
   }
-  Mod+BracketRight {
-    consume-or-expel-window-right
+  Mod+2 {
+    focus-workspace 2
   }
-  Mod+Comma {
-    consume-window-into-column
+  Mod+3 {
+    focus-workspace 3
   }
-  Mod+Period {
-    expel-window-from-column
+  Mod+4 {
+    focus-workspace 4
   }
-  Mod+D {
-    switch-preset-column-width
+  Mod+5 {
+    focus-workspace 5
   }
-  Mod+Shift+R {
-    switch-preset-window-height
+  Mod+6 {
+    focus-workspace 6
   }
-  Mod+Ctrl+R {
-    reset-window-height
+  Mod+7 {
+    focus-workspace 7
   }
-  Mod+F {
-    maximize-column
+  Mod+8 {
+    focus-workspace 8
   }
-  Mod+Shift+F {
-    fullscreen-window
-  }
-  Mod+M {
-    maximize-window-to-edges
-  }
-  Mod+Ctrl+F {
-    expand-column-to-available-width
-  }
-  Mod+Ctrl+C {
-    center-column
-  }
-  Mod+Shift+C {
-    center-visible-columns
-  }
-  Mod+Minus {
-    set-column-width "-10%"
-  }
-  Mod+Equal {
-    set-column-width "+10%"
-  }
-  Mod+Shift+Minus {
-    set-window-height "-10%"
-  }
-  Mod+Shift+Equal {
-    set-window-height "+10%"
-  }
-  Mod+V {
-    toggle-window-floating
-  }
-  Mod+Shift+V {
-    switch-focus-between-floating-and-tiling
-  }
-  Mod+W {
-    toggle-column-tabbed-display
-  }
-  Print {
-    screenshot
-  }
-  Shift+Print {
-    screenshot-screen
-  }
-  Mod+Print {
-    screenshot-window
-  }
-  Mod+Escape allow-inhibiting=false {
-    toggle-keyboard-shortcuts-inhibit
-  }
-  Mod+Shift+E {
-    quit
-  }
-  Ctrl+Alt+Delete {
-    quit
-  }
-  Mod+Shift+P {
-    power-off-monitors
+  Mod+9 {
+    focus-workspace 9
   }
 }
-cursor {
-  hide-when-typing
-  hide-after-inactive-ms 3000
-  xcursor-theme ""
-  xcursor-size 48
-}
+
