@@ -43,6 +43,8 @@
   services.fwupd.enable = true; # linux FOSS firmware update daemon
   zramSwap.enable = true; # 50% by default
 
+  users.defaultUserShell = pkgs.bash;
+
   imports = [
     ./hardware-configuration.nix
 
