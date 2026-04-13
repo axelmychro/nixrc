@@ -4,9 +4,14 @@
   programs.noctalia-shell.settings.bar.widgets = {
     left = [
       {
-        id = "Workspace";
-        hideUnoccupied = false;
-        labelMode = "none";
+        id = "NotificationHistory";
+      }
+      {
+        id = "Clock";
+        formatHorizontal = "hh:mm A";
+        formatVertical = "hh mm A";
+        useMonospacedFont = true;
+        usePrimaryColor = true;
       }
       {
         id = "Network";
@@ -17,18 +22,12 @@
     ];
     center = [
       {
-        id = "Clock";
-        formatHorizontal = "hh:mm A";
-        formatVertical = "hh mm A";
-        useMonospacedFont = true;
-        usePrimaryColor = true;
+        id = "Workspace";
+        hideUnoccupied = false;
+        labelMode = "none";
       }
     ];
     right = [
-      {
-        id = "Tray";
-        chevronColorKey = "mSecondary";
-      }
       {
         id = "Volume";
       }
@@ -44,7 +43,8 @@
         warningThreshold = 50;
       }
       {
-        id = "NotificationHistory";
+        id = "Tray";
+        chevronColorKey = "mSecondary";
       }
     ];
   };
