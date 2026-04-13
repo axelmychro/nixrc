@@ -19,6 +19,6 @@ _: {
       };
       mouse.hide_when_typing = true;
     };
-    themes = "catppuccin_macchiato";
+    theme = "catppuccin_macchiato";
   };
 }

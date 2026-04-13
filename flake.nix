@@ -79,6 +79,7 @@
             ./subsystem/skadi/index.nix
 
             home-manager.nixosModules.home-manager
+            silentSDDM.nixosModules.default
           ];
         };
       };
