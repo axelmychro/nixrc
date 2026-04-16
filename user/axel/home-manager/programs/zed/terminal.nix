@@ -5,7 +5,7 @@ _: {
       shell = "system";
       toolbar.breadcrumbs = false;
       font_family = "GeistMono Nerd Font";
-      cursor_shape = "underline";
+      cursor_shape = "block";
     };
   };
 }
