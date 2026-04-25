@@ -1,12 +1,12 @@
 _: {
   programs.noctalia-shell.settings.bar = {
-    barType = "floating";
-    position = "right";
+    barType = "simple";
+    position = "left";
 
     backgroundOpacity = 1;
     useSeparateOpacity = false;
 
-    density = "default";
+    density = "spacious";
     displayMode = "always_visible";
     showOnWorkspaceSwitch = true;
     showOutline = false;
@@ -14,10 +14,10 @@ _: {
     capsuleOpacity = 1;
     capsuleColorKey = "none";
 
-    outerCorners = false;
-    floating = true;
-    fontScale = 1;
-    widgetSpacing = 16;
+    outerCorners = true;
+    floating = false;
+    fontScale = 1.25;
+    widgetSpacing = 24;
     contentPadding = 0;
     frameThickness = 8;
     frameRadius = 8;
