@@ -21,10 +21,9 @@ in
     settings = {
       "LockScreen".background = sddm_bg_file_name;
       "LoginScreen".background = sddm_bg_file_name;
-      "LoginScreen.Clock" = {
-        font-family = font_family_name;
-        color = "#FFFFFF";
-      };
+      "LockScreen.Clock".color = "#FFFFFF";
+      "LockScreen.Date".color = "#FFFFFF";
+      "LoginScreen.Clock".font-family = font_family_name;
       "LoginScreen.Date".font-family = font_family_name;
       "LoginScreen.Message".font-family = font_family_name;
       "LoginScreen.LoginArea.Avatar".shape = "square";
@@ -35,7 +34,13 @@ in
       "LoginScreen.LoginArea.PasswordInput".font-family = font_family_name;
       "LoginScreen.LoginArea.LoginButton".font-family = font_family_name;
       "LoginScreen.LoginArea.Spinner".font-family = font_family_name;
-      "LoginScreen.LoginArea.WarningMessage".font-family = font_family_name;
+      "LoginScreen.LoginArea.WarningMessage" = {
+        font-family = font_family_name;
+        font-weight = 700;
+        normal-color = "#FFFFFF";
+        warning-color = "#FFFFFF";
+        error-color = "#FFFFFF";
+      };
       "LoginScreen.LoginArea.Buttons".font-family = font_family_name;
       "LoginScreen.LoginArea.Popups".font-family = font_family_name;
       "Tooltips".font-family = font_family_name;
