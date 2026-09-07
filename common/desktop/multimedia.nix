@@ -8,12 +8,24 @@
   config = lib.mkIf config.common.multimedia.enable {
     environment.systemPackages = with pkgs; [
       ffmpeg
+      yt-dlp
+
+      # capturer
+      snapshot
+
+      # audio
+      amberol
       easyeffects
       eartag
+
+      # image
+      loupe
       imagemagick
-      snapshot
+      gradia
+
+      # video
+      haruna
       kdePackages.kdenlive
-      yt-dlp
     ];
     programs.obs-studio = {
       package = pkgs.obs-studio.override { cudaSupport = true; };
