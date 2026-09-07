@@ -1,5 +1,6 @@
 {
   assets,
+  lib,
   user,
   ...
 }:
@@ -17,6 +18,22 @@
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG6PBGNhpPnKvAjl2k0oZeY732xawJPcRM/G4yjc+vgR axelmychro@prts"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA3t0YR5cFGKfTOpWZ9MJDf8Av+LstI6A+J+mLbm7lpK axelmychro@prts-web"
+    ];
+  };
+
+  services.postgresql = {
+    authentication = lib.mkOverride 10 ''
+      #type database  DBuser  auth-method
+      local all       all     trust
+    '';
+    ensureDatabases = [ user ];
+    ensureUsers = [
+      {
+        ensureClauses = {
+          login = true;
+        };
+        name = user;
+      }
     ];
   };
 }
