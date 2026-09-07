@@ -21,7 +21,7 @@
     };
     games.enable = true;
     graphics.enable = true;
-    gstreamer.enable = true;
+    gstreamer.enable = false;
     internet.enable = true;
     multimedia.enable = true;
     office.enable = true;
