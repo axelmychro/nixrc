@@ -6,16 +6,18 @@ host:
   assets ? ../assets,
 
   ## Required
-  ecosystem,
   users,
 
   ## Optional
+  ecosystem ? [ ],
   extraArgs ? { },
   extraModules ? [ ],
   theme ? "rose-pine",
 }:
 let
   inherit (inputs.nixpkgs) lib;
+  minimal_system = ecosystem == [ ] || builtins.elem "server" ecosystem;
+
   userConfigurations = lib.concatMap (
     u:
     let
@@ -23,7 +25,7 @@ let
       userHomeManagerConfigurationFile = userConfigurationFile + /home-manager;
     in
     [ userConfigurationFile ]
-    ++ lib.optionals (ecosystem != "server" && builtins.pathExists userHomeManagerConfigurationFile) [
+    ++ lib.optionals (!minimal_system && builtins.pathExists userHomeManagerConfigurationFile) [
       userHomeManagerConfigurationFile
     ]
   ) users;
@@ -57,27 +59,16 @@ let
       inputs
       ;
   };
-  ecosystemArgs =
-    if ecosystem == "kde" then
-      {
-        inherit (inputs) plasma-manager;
-      }
-    else if ecosystem == "niri" then
-      {
-        inherit (inputs) noctalia;
-      }
-    else
-      { };
 in
 lib.nixosSystem {
   modules = [
-    { system.nixos.label = "${ecosystem}-${version}"; }
+    { system.nixos.label = "${lib.concatStringsSep "-" ecosystem}-${version}"; }
     ../common/system
     ../host/${host}
     ./nixosconfiguser.nix
   ]
   ++ userConfigurations
-  ++ lib.optionals (ecosystem != "server") [
+  ++ lib.optionals (!minimal_system) [
     ../common/desktop
     inputs.home-manager.nixosModules.default
     ../modules/home-manager
@@ -86,7 +77,8 @@ lib.nixosSystem {
     ../modules/power
     ../modules/graphics
   ]
-  ++ (
+  ++ lib.concatMap (
+    ecosystem:
     if ecosystem == "kde" then
       [
         ../ecosystem/kde
@@ -110,7 +102,7 @@ lib.nixosSystem {
       ]
     else
       [ ]
-  )
+  ) ecosystem
   ++ extraModules;
-  specialArgs = defaultArgs // ecosystemArgs // extraArgs;
+  specialArgs = defaultArgs // extraArgs;
 }
