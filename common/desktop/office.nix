@@ -10,6 +10,7 @@
       libreoffice
       monero-gui
       telegram-desktop
+      gnome-clocks
     ];
     programs.thunderbird.enable = true;
     programs.zoom-us.enable = true;
