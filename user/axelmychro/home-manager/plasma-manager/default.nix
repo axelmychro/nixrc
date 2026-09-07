@@ -13,15 +13,25 @@ in
     enable = true;
     overrideConfig = true;
 
+    session.sessionRestore.restoreOpenApplicationsOnLogin = "startWithEmptySession";
+
     workspace = {
       inherit lookAndFeel;
-      colorScheme = "FOOBAR";
+      cursor = {
+        size = 48;
+        theme = if theme == "rose-pine" then "BreezeX-RoséPine" else "BreezeX-RoséPineDawn";
+      };
+      colorScheme = if theme == "rose-pine" then "CosmicDark" else "CosmicLight";
       wallpaper = wallpaper-file;
     };
     kscreenlocker.appearance = {
       wallpaper = wallpaper-file;
       alwaysShowClock = true;
       showMediaControls = true;
+    };
+    kwin.effects = {
+      hideCursor.hideOnTyping = true;
+      wobblyWindows.enable = true;
     };
     fonts =
       let
