@@ -8,10 +8,7 @@
   environment = {
     cosmic.excludePackages = with pkgs; [
       cosmic-term
-    ];
-    systemPackages = with pkgs; [
-      decibels
-      loupe
+      cosmic-player
     ];
   };
 }
