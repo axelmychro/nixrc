@@ -9,9 +9,7 @@
       konsole
       kate
       okular
-    ];
-    systemPackages = [
-      pkgs.haruna
+      gwenview
     ];
   };
 }
