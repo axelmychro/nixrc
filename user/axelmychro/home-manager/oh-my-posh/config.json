@@ -45,18 +45,10 @@
             "newline": true,
             "segments": [
                 {
-                    "type": "shell",
-                    "style": "diamond",
-                    "trailing_diamond": "\ue0b0",
-                    "background": "p:main",
-                    "foreground": "p:base",
-                    "template": " {{ .Name }} "
-                },
-                {
                     "type": "path",
                     "style": "plain",
                     "foreground": "p:path",
-                    "template": " {{ .Path }} ",
+                    "template": "{{ .Path }} ",
                     "options": {
                         "home_icon": "~",
                         "folder_icon": "..",
@@ -67,7 +59,7 @@
                     "type": "git",
                     "style": "plain",
                     "foreground": "p:git",
-                    "template": " [{{ .HEAD }}] ",
+                    "template": "[{{ .HEAD }}] ",
                     "options": {
                         "branch_icon": "\ue725 ",
                         "cherry_pick_icon": "\ue29b ",
@@ -85,31 +77,31 @@
                     "type": "docker",
                     "style": "plain",
                     "foreground": "p:docker",
-                    "template": " [\uf308 {{ .Context }}] "
+                    "template": "[\uf308 {{ .Context }}] "
                 },
                 {
                     "type": "go",
                     "style": "plain",
                     "foreground": "p:go",
-                    "template": " [\ue627 go] "
+                    "template": "[\ue627 go] "
                 },
                 {
                     "type": "haskell",
                     "style": "plain",
                     "foreground": "p:haskell",
-                    "template": " [\ue61f hskl] "
+                    "template": "[\ue61f hskl] "
                 },
                 {
                     "type": "lua",
                     "style": "plain",
                     "foreground": "p:lua",
-                    "template": " [\ue620 lua] "
+                    "template": "[\ue620 lua] "
                 },
                 {
                     "type": "python",
                     "style": "plain",
                     "foreground": "p:python",
-                    "template": " [\ue73c pytn] ",
+                    "template": "[\ue73c pytn] ",
                     "options": {
                         "display_default": false,
                         "display_mode": "context"
@@ -119,7 +111,7 @@
                     "type": "rust",
                     "style": "plain",
                     "foreground": "p:rust",
-                    "template": " [\ue7a8 rs] "
+                    "template": "[\ue7a8 rs] "
                 },
                 {
                     "type": "npm",
@@ -131,7 +123,7 @@
                     "type": "pnpm",
                     "style": "plain",
                     "foreground": "p:pnpm",
-                    "template": " [\ue865 pnpm] "
+                    "template": "[\ue865 pnpm] "
                 }
             ]
         },
@@ -140,6 +132,13 @@
             "alignment": "left",
             "newline": true,
             "segments": [
+                {
+                    "type": "shell",
+                    "style": "plain",
+                    "background": "p:main",
+                    "foreground": "p:base",
+                    "template": " {{ .Name }} "
+                },
                 {
                     "type": "status",
                     "style": "plain",
