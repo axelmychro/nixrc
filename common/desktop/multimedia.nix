@@ -9,6 +9,7 @@
     environment.systemPackages = with pkgs; [
       ffmpeg
       easyeffects
+      eartag
       imagemagick
       snapshot
       kdePackages.kdenlive
