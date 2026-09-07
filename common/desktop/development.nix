@@ -39,6 +39,8 @@ in
     environment.systemPackages =
       with pkgs;
       [
+        nodejs
+        pnpm
         zed-editor
         video2x
       ]
