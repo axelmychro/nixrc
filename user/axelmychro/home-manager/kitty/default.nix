@@ -7,7 +7,7 @@ in
   xdg.configFile."kitty/kitty.conf".text = ''
     hide_window_decorations titlebar-only
     font_family             GoMono Nerd Font
-    font_size               16.0
+    font_size               12.0
     background_opacity      0.9
 
     ${builtins.readFile kitty_conf}
